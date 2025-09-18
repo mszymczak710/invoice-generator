@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## App version
 
-Current app version: 0.0.0  
+Current app version: `1.0.0`
 (See [package.json](./package.json) for full versioning information)
 
 ## Installation
