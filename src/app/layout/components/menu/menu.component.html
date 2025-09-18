@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img class="brand-logo" src="assets/images/logo.png" [alt]="appName" />
+    @for (menuItem of menuItems; track menuItem.label; let first = $first) {
+      <button [ngClass]="{ 'ms-3': !first, 'ms-4': first }" mat-flat-button color="primary" role="link" [routerLink]="menuItem.routerLink">
+        {{ menuItem.label }}
+      </button>
+    }
+  </mat-toolbar-row>
+</mat-toolbar>

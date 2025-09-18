@@ -1,0 +1,8 @@
+@use 'sass:math';
+
+@function get-self-hosted-selector($selector, $self-hosted) {
+  @if $self-hosted {
+    $selector: '&' + $selector;
+  }
+  @return $selector;
+}

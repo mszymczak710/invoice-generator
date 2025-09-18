@@ -1,0 +1,10 @@
+:root {
+  --mat-card-title-text-size: 2rem;
+}
+
+.mat-mdc-card {
+  padding: 1.75rem;
+  opacity: 0.95;
+  max-width: 50rem;
+  color: $white;
+}

@@ -1,0 +1,27 @@
+<div class="klg-field">
+  @if (!field.labelledBy) {
+    <label class="field-label" [id]="getFieldId() + '-label'" [for]="getFieldId()">
+      {{ field.label }}
+      <klg-required-mark [required]="field.required"></klg-required-mark>
+    </label>
+  }
+  <mat-form-field>
+    <input
+      matInput
+      [attr.aria-invalid]="control.invalid"
+      [attr.aria-labelledby]="field.labelledBy || null"
+      [errorStateMatcher]="errorStateMatcher"
+      [formControl]="control"
+      [id]="getFieldId()"
+      [minlength]="minLength"
+      [maxlength]="maxLength"
+      [placeholder]="field.placeholder"
+      [required]="field.required"
+      [type]="field.type"
+    />
+    @if (errors) {
+      <mat-error>{{ errors }}</mat-error>
+    }
+    <mat-hint [innerHTML]="hint"></mat-hint>
+  </mat-form-field>
+</div>

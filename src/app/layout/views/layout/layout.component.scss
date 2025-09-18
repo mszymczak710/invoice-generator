@@ -1,0 +1,7 @@
+@import 'utils';
+
+.layout-section {
+  min-height: calc(100vh - $menu-height);
+  background-color: #333;
+  padding: 2rem;
+}

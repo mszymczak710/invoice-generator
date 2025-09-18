@@ -1,0 +1,60 @@
+@if (form) {
+  <form [attr.id]="formArrayName" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <table class="form-list-table">
+      <caption>{{ listCaption }}</caption>
+      @if (formArray?.length) {
+        <thead>
+          <tr>
+            @for (field of fields; track field; let last = $last) {
+              <th class="ps-2">
+                {{ field.label }}
+                <klg-required-mark [required]="field.required"></klg-required-mark>
+              </th>
+            }
+            @if (actions.length) {
+              <th class="narrow"></th>
+            }
+          </tr>
+        </thead>
+
+        <tbody [formArrayName]="formArrayName">
+          @for (group of formArray.controls; track group; let index = $index) {
+            <tr [formGroupName]="index">
+              @for (field of fields; track field.name) {
+                <td [style]="columnStyles.get(field.name)">
+                  <klg-form-field-switcher
+                    [control]="getFormControl(field.name, index)"
+                    [errorStateMatcher]="rowErrorMatcher"
+                    [field]="field"
+                  ></klg-form-field-switcher>
+                </td>
+              }
+
+              @if (actions.length) {
+                @for (action of actions; track action.label) {
+                  <td class="form-list-actions">
+                    <div [matTooltip]="action.disabledLabel" [matTooltipDisabled]="!action.disabled(this)">
+                      <button
+                        mat-icon-button
+                        [disabled]="action.disabled ? action.disabled(this) : false"
+                        [matTooltip]="action.label"
+                        type="button"
+                        (click)="action.action(index, this)"
+                      >
+                        <mat-icon [svgIcon]="action.icon"></mat-icon>
+                      </button>
+                    </div>
+                  </td>
+                }
+              }
+            </tr>
+          }
+        </tbody>
+      }
+    </table>
+
+    <button mat-raised-button color="primary" type="button" (click)="addItem()">
+      {{ addButtonLabel }}
+    </button>
+  </form>
+}

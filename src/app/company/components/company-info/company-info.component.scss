@@ -1,0 +1,10 @@
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  strong {
+    display: inline-block;
+    min-width: 4.5rem;
+  }
+}

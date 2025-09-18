@@ -1,0 +1,39 @@
+.mat-mdc-form-field.mat-form-field-appearance-outline {
+  width: 100%;
+  font-size: var(--fs-base);
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  .mat-mdc-form-field-hint-wrapper,
+  .mat-mdc-form-field-error-wrapper {
+    position: relative;
+    bottom: 1.25rem;
+    top: 100%;
+    padding: 0 0.25rem;
+
+    .mat-mdc-form-field-error,
+    .mat-mdc-form-field-hint {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+fieldset {
+  border-radius: $border-radius;
+  padding: 1rem;
+
+  legend {
+    width: auto;
+    padding: 0 0.5rem;
+    float: none;
+    font-weight: 500;
+  }
+}
+
+.klg-field {
+  .field-label {
+    padding-bottom: 0.25rem;
+    padding-left: 0.4rem;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,29 @@
+<mat-card class="klg-section">
+  <div class="section-heading-wrapper">
+    <h2 class="section-heading">{{ strings.sectionTitle }}</h2>
+
+    <div class="mt-3">
+      @if (errorMessage) {
+        <div class="alert alert-danger py-2">{{ errorMessage }}</div>
+      }
+
+      @if (company) {
+        <div class="company-info">
+          <span>
+            <strong>{{ strings.company.name }}</strong>
+            {{ company.name }}
+          </span>
+          <span>
+            <strong>{{ strings.company.address }}</strong>
+            {{ company.address }}
+          </span>
+          <span>
+            <strong>{{ strings.company.phones }}</strong>
+            {{ phones }}
+          </span>
+        </div>
+      }
+      <klg-spinner [visible]="loading"></klg-spinner>
+    </div>
+  </div>
+</mat-card>

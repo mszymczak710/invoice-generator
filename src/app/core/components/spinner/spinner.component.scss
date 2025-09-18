@@ -1,0 +1,10 @@
+:host {
+  display: block;
+
+  .mdc-circular-progress {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+  }
+}

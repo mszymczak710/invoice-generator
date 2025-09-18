@@ -1,0 +1,20 @@
+:root {
+  --fs-base: 16px;
+
+  @media screen and (max-width: 480px) {
+    --fs-base: 10px;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    --fs-base: 12px;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1279px) {
+    --fs-base: 14px;
+  }
+}
+
+$white: #fff;
+$black: #000;
+
+$menu-height: 4rem;

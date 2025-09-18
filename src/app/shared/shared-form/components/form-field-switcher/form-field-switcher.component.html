@@ -1,0 +1,8 @@
+@switch (field.type) {
+  @case (formFieldTypes.INPUT_NUMBER) {
+    <klg-input-number-field [control]="control" [errorStateMatcher]="errorStateMatcher" [field]="field"></klg-input-number-field>
+  }
+  @default {
+    <klg-input-field [control]="control" [errorStateMatcher]="errorStateMatcher" [field]="field"></klg-input-field>
+  }
+}

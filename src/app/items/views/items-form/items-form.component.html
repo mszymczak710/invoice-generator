@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center">
+  <mat-card>
+    <fieldset class="border">
+      <legend class="fs-4">{{ strings.listHeader }}</legend>
+
+      @if (errorMessage) {
+        <div class="alert alert-danger">{{ errorMessage }}</div>
+      }
+
+      <klg-form-list
+        [actions]="formListActions"
+        [addButtonLabel]="strings.form.action.add"
+        [columnStyles]="formListColumnStyles"
+        [fieldsMap]="getFormListDef()"
+        formArrayName="items"
+        [items]="items"
+        [listCaption]="strings.form.caption"
+        [required]="true"
+        (formSubmitted)="submit()"
+        (rowAdded)="onRowAdded()"
+      ></klg-form-list>
+    </fieldset>
+    <div class="d-flex justify-content-center mt-3">
+      <button mat-flat-button color="accent" form="items" type="submit">{{ commonStrings.submit }}</button>
+    </div>
+  </mat-card>
+</div>

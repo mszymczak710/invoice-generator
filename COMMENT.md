@@ -1,0 +1,13 @@
+# Komentarz do zadania
+
+**Komentarz (tym razem w języku polskim):**
+
+1. Dane dotyczące przedmiotów przechowywane są w `sessionStorage`, co uznałem za najbardziej odpowiednie rozwiązanie w tym przypadku. Wykorzystanie `localStorage` mogłoby być mniej wygodne dla użytkownika.  
+2. Do pobierania danych wprowadziłem **sztuczne opóźnienie (delay)** w celu zaprezentowania działania **spinnera**. Mam świadomość, że nie jest to dobra praktyka w środowisku produkcyjnym, jednak bez takiego zabiegu spinner nie byłby widoczny, a chciałem pokazać pełną funkcjonalność aplikacji.  
+3. Zaimplementowałem rozszerzoną funkcjonalność **ErrorStateMatchera**, jednak nie mam pewności, czy w pełni odpowiada ona intencjom opisanym w zadaniu.  
+4. Do formularza dodałem guard typu `CanDeactivate`. W przypadku opuszczenia strony poprzez **F5** wyświetlane jest natywne okno przeglądarki, natomiast w momencie próby przejścia do podsumowania pojawia się `MatDialog` z biblioteki `Angular Material`.  
+5. Rozważałem dodanie **filtrowania**, **sortowania** i **paginacji** do listy produktów, jednak uznałem to za funkcjonalność nadmiarową po stronie frontendu. Standardowo tego typu mechanizmy realizowane są poprzez przesyłanie odpowiednich parametrów w zapytaniu do backendu, który zwraca już pofiltrowane, posortowane i spaginowane dane.  
+6. Rozważałem również implementację mechanizmu translacji, mimo, że nie było nic wspomniane o tym w zadaniu, jednak ze względu na priorytet szybkiego ukończenia zadania, pominąłem tą funkcjonalność.
+7. Do zarządzania stanem listy przedmiotów wykorzystałem `BehaviorSubject`. Dzięki temu komponenty mogą w prosty sposób subskrybować zmiany w danych. Zmiany są zapisywane w `sessionStorage`, a przy odświeżeniu strony stan aplikacji zostaje poprawnie odtworzony.
+8. Do zmockowania Backendu użyłem [json-server](https://github.com/typicode/json-server), co zostało również opisane w [README.md](./README.md).
+9. Do pilnowania porządku w kodzie (formatowania, lintowania i budowania aplikacji) stworzyłem specjalne reguły w `ESLint` i `Prettier` oraz utworzyłem pipeline'y przy użyciu [GitHub Actions](https://github.com/features/actions). Plik konfiguracyjny znajduje się tutaj: [ci.yml](.github/workflows/ci.yml).

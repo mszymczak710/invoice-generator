@@ -1,0 +1,8 @@
+@switch (column.type) {
+  @case (columnTypes.NUMBER) {
+    <klg-number-cell [column]="column" [row]="row"></klg-number-cell>
+  }
+  @default {
+    <klg-text-cell [column]="column" [row]="row"></klg-text-cell>
+  }
+}

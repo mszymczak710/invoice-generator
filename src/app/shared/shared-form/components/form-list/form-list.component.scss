@@ -1,0 +1,36 @@
+@import 'utils';
+
+:host {
+  display: block;
+}
+
+.form-list-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.form-list-table {
+  width: 100%;
+
+  td {
+    vertical-align: top;
+
+    &:not(:last-child) {
+      padding-right: 0.5rem;
+    }
+
+    &.form-list-actions {
+      @include mat-icon-button-size(3rem) {
+        position: relative;
+        @include mat-icon-size(2rem) {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

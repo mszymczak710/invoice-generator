@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$mat-primary: mat.define-palette(mat.$deep-purple-palette);
+$mat-accent: mat.define-palette(mat.$blue-palette, 500);
+$mat-warn: mat.define-palette(mat.$red-palette, 300);
+
+$primary: mat.get-color-from-palette($mat-primary);
+$accent: mat.get-color-from-palette($mat-accent);
+$warn: mat.get-color-from-palette($mat-warn);
+
+$theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $mat-primary,
+      accent: $mat-accent,
+      warn: $mat-warn
+    ),
+    typography: mat.define-typography-config(),
+    density: 0
+  )
+);
+
+@include mat.all-component-themes($theme);
+
+.klg-field {
+  @include mat.all-component-densities(-3);
+}

@@ -1,0 +1,46 @@
+.table-container {
+  .mdc-data-table__table {
+    border: 1px solid #ddd;
+  }
+
+  .mdc-data-table__cell,
+  .mdc-data-table__header-cell,
+  .mdc-data-table__footer-cell {
+    padding: 0 0.75rem;
+  }
+}
+
+caption {
+  visibility: hidden;
+  max-height: 1px;
+  padding: 0;
+  max-width: 1px;
+}
+
+.mat-mdc-table {
+  .mat-mdc-no-data-row td {
+    padding: 1rem 0;
+  }
+
+  .mat-mdc-header-row {
+    background: #666;
+  }
+
+  .mat-mdc-footer-row {
+    border-top: 1px solid #ddd;
+  }
+
+  .mat-mdc-cell {
+    border-bottom-color: #eee;
+
+    &:not(:last-child) {
+      border-right: 1px solid #eee;
+    }
+  }
+}
+
+th {
+  &.narrow {
+    width: 1%;
+  }
+}
